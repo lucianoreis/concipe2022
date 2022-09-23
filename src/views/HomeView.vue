@@ -21,7 +21,7 @@ const texto = ref("CONCIPE")
 <template>
 <div>
   <select>
-    <option value="" ></option>
+    <option value="" >Tipo de veículo</option>
     <option value="cars" @click="getBrands('cars')">Carros</option>
     <option value="motorcycles" @click="getBrands('motorcycles')">Motos</option>
     <option value="trucks" @click="getBrands('trucks')" >Caminhões</option>

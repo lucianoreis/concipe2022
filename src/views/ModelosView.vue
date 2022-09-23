@@ -17,7 +17,12 @@ onMounted(() => {
 
 <template>
   <div>
-    <h1> {{ modelos }}</h1>
+    <li
+      v-for="modelo in modelos"
+      :key="modelo.code"
+    >
+    {{ modelo.name }}
+    </li>
   </div>
 </template>
 

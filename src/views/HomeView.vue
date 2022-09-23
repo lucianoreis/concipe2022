@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted, ref } from "vue"
 const marcas = ref([])
+const tipo = ref('')
 const getBrands = (vehiclesType) => {
+  tipo.value = vehiclesType
   fetch(`https://parallelum.com.br/fipe/api/v2/${vehiclesType}/brands`)
     .then(response => response.json())
     .then(data => {
@@ -21,7 +23,11 @@ const texto = ref("CONCIPE")
   </select>
 </div>
 <ul>
-  <li v-for="marca in marcas" :key="marca.code">
+  <li
+    v-for="marca in marcas"
+    :key="marca.code"
+    @click="$router.push(`/modelos/${tipo}/${marca.code}`)"
+  >
     {{ marca.name }}
   </li>
 </ul>
